@@ -30,7 +30,6 @@ var app = new Vue ({
           e.visible = false;
         }
       });
-
     }
   }
 });

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
-        <title>ex-dischi-musicali</title>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>ex-dischi-musicali</title>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <header>
@@ -14,14 +16,13 @@
                 <img src="logo.png" alt="logo" />
             </div>
         </header>
-
-        <div class="cds-container container">
+        <div id="root" class="cds-container container">
             <!-- Disco ad esempio -->
-            <div class="cd">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Ten_Summoner%27s_Tales.jpg" alt="">
-                <h3>Ten's Summoners Tales</h3>
-                <span class="author">Sting</span>
-                <span class="year">1993</span>
+            <div v-for="disk in diskList" class="cd">
+                <img :src="disk.poster" :alt="disk.title">
+                <h3> {{disk.title}} </h3>
+                <span class="author"> {{disk.author}} </span>
+                <span class="year"> {{disk.year}} </span>
             </div>
         </div>
 

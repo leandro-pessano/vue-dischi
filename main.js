@@ -26,7 +26,7 @@ var app = new Vue ({
       this.diskList.forEach((e, i) => {
         if (this.selectedGenre == e.genre || this.selectedGenre == 'All') {
           e.visible = true;
-        } else if (this.selectedGenre != e.genre) {
+        } else {
           e.visible = false;
         }
       });

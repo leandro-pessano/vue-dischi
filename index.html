@@ -11,14 +11,21 @@
       <link rel="stylesheet" href="style.css">
     </head>
     <body>
+
+      <div id="root">
+
         <header>
             <div class="container">
                 <img src="logo.png" alt="logo" />
+                <select v-model="selectedGenre" @change="diskFilter()">
+                  <option value="All">All</option>
+                  <option v-for="genre in genreList" :value="genre"> {{genre}} </option>
+                </select>
             </div>
         </header>
-        <div id="root" class="cds-container container">
+        <div class="cds-container container">
             <!-- Disco ad esempio -->
-            <div v-for="disk in diskList" class="cd">
+            <div v-if="disk.visible == true" v-for="disk in diskList" class="cd">
                 <img :src="disk.poster" :alt="disk.title">
                 <h3> {{disk.title}} </h3>
                 <span class="author"> {{disk.author}} </span>
@@ -26,6 +33,8 @@
             </div>
         </div>
 
+
+      </div>
 
         <script src="main.js" charset="utf-8"></script>
     </body>
